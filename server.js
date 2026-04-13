@@ -24,6 +24,12 @@ app.post('/new', (req, res) => {
 
     res.redirect('/');
 });
+
+app.get('/delete/:name', (req, res) => {
+    catEdit.deleteCat(req.params.name);
+    res.redirect('/');
+});
+
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
